@@ -4,12 +4,12 @@ import {
   CardContent,
   CircularProgress,
   Container,
-  TextField,
   Typography,
 } from '@material-ui/core';
-import { Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import * as yup from 'yup';
+import FormField from '../components/FormField';
 
 const LoginForm = () => {
   const [userInfo, setUserInfo] = useState();
@@ -45,49 +45,24 @@ const LoginForm = () => {
             initialValues={initialValues}
             validationSchema={loginSchema}
             onSubmit={login}>
-            {(formik) => (
+            {({ errors, isSubmitting, isValid, touched }) => (
               <Form noValidate>
-                <Field
-                  error={formik.touched.username && formik.errors.username ? true : false}
-                  fullWidth
-                  helperText={
-                    formik.touched.username && formik.errors.username
-                      ? formik.errors.username
-                      : ''
-                  }
-                  required
-                  margin="normal"
-                  as={TextField}
-                  variant="outlined"
+                <FormField
+                  errorMsg={errors.username}
+                  isError={touched.username && errors.username}
                   label="Username"
                   name="username"
                 />
-                <Field
-                  error={formik.touched.email && formik.errors.email ? true : false}
-                  fullWidth
-                  helperText={
-                    formik.touched.email && formik.errors.email ? formik.errors.email : ''
-                  }
-                  required
-                  margin="normal"
-                  as={TextField}
-                  variant="outlined"
+                <FormField
+                  errorMsg={errors.email}
+                  isError={touched.email && errors.email}
                   label="Email"
                   name="email"
                   type="email"
                 />
-                <Field
-                  error={formik.touched.password && formik.errors.password ? true : false}
-                  fullWidth
-                  helperText={
-                    formik.touched.password && formik.errors.password
-                      ? formik.errors.password
-                      : ''
-                  }
-                  required
-                  margin="normal"
-                  as={TextField}
-                  variant="outlined"
+                <FormField
+                  errorMsg={errors.password}
+                  isError={touched.password && errors.password}
                   label="Password"
                   name="password"
                   type="password"
@@ -97,8 +72,8 @@ const LoginForm = () => {
                   type="submit"
                   variant="contained"
                   color="primary"
-                  disabled={!formik.isValid || formik.isSubmitting}>
-                  {formik.isSubmitting ? <CircularProgress size={24} /> : 'Login'}
+                  disabled={!isValid || isSubmitting}>
+                  {isSubmitting ? <CircularProgress size={24} /> : 'Login'}
                 </Button>
                 {/* <pre>{JSON.stringify(formik, null, 4)}</pre> */}
               </Form>
