@@ -9,7 +9,7 @@ import {
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import * as yup from 'yup';
-import FormField from './FormField';
+import FormField from '../components/FormField';
 
 const SignupForm = () => {
   const [userInfo, setUserInfo] = useState();

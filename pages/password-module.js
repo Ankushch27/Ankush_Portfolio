@@ -75,8 +75,8 @@ const PasswordModule = () => {
           />
           <Typography variant="h6">Password Requirements</Typography>
           {requirements.map(({ icon, text }) => (
-            <div key={text}>
-              {icon ? <Check color="primary" /> : <Clear color="error" />}
+            <div key={text} className="flex gap-2">
+              {icon ? <Check color="success" /> : <Clear color="error" />}
               <Typography variant="body1">{text}</Typography>
             </div>
           ))}
