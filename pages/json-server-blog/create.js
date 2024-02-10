@@ -5,7 +5,7 @@ import {
   CircularProgress,
   Container,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import { Form, Formik } from 'formik';
 import { useRouter } from 'next/router';
 import FormField from '../../components/FormField';

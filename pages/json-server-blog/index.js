@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Container, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardContent, Container, Typography } from '@mui/material';
 import axios from 'axios';
 import Link from 'next/link';
 

@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core';
+import { TextField } from '@mui/material';
 import { Field } from 'formik';
 
 const FormField = ({ errorMsg, isError, ...props }) => {
@@ -10,7 +10,6 @@ const FormField = ({ errorMsg, isError, ...props }) => {
       helperText={isError ? errorMsg : ''}
       margin="normal"
       required
-      variant="outlined"
       {...props}
     />
   );

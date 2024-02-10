@@ -5,7 +5,7 @@ import {
   CircularProgress,
   Container,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import * as yup from 'yup';

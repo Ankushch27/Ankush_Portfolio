@@ -7,7 +7,7 @@ import {
   TextField,
   Tooltip,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import { useState } from 'react';
 
 const ExpenseTracker = () => {
@@ -81,14 +81,12 @@ const ExpenseTracker = () => {
           <Typography variant="h5">Add new transaction</Typography>
           <TextField
             fullWidth
-            variant="outlined"
             label="Transaction title"
             onChange={(e) => setTransactionTitle(e.target.value)}
           />
           <Tooltip title="Negative - Expense, Positive - Income">
             <TextField
               fullWidth
-              variant="outlined"
               label="Amount"
               onChange={(e) => setAmount(+e.target.value)}
             />

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import Image from 'next/image';
 
 const MenuItemCard = ({ desc, img, price, title }) => {
@@ -7,11 +7,10 @@ const MenuItemCard = ({ desc, img, price, title }) => {
       <CardMedia sx={{ height: "200px", position: "relative" }}>
         <Image
           src={img}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-          blurDataURL={img}
+          alt={title}
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
         />
       </CardMedia>
       <CardContent>

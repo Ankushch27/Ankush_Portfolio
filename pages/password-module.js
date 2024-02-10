@@ -1,3 +1,4 @@
+import { Check, Clear, Visibility, VisibilityOff } from '@mui/icons-material';
 import {
   Card,
   CardContent,
@@ -6,8 +7,7 @@ import {
   InputAdornment,
   TextField,
   Typography,
-} from '@material-ui/core';
-import { Check, Clear, Visibility, VisibilityOff } from '@material-ui/icons';
+} from '@mui/material';
 import { useState } from 'react';
 
 const PasswordModule = () => {
@@ -62,7 +62,6 @@ const PasswordModule = () => {
             name="password"
             onChange={handleChange}
             type={showPassword ? 'text' : 'password'}
-            variant="outlined"
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
